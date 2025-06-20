@@ -1,0 +1,303 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Portfolio container */
+.portfolio {
+  min-height: 100vh;
+  /* width: 100vw; */
+  background-color: #f9fafb;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #6b7280;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #111827;
+}
+
+.nav-link.active {
+  color: #111827;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #111827;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  gap: 2rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4rem;
+    
+    
+  flex: 1;
+  max-width: 32rem;
+}
+
+.greeting {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  text-align: start;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+    text-align: start;
+}
+
+.title {
+  color: #6b7280;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+    text-align: start;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.social-link {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: #6b7280;
+}
+
+.social-link .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Portfolio button */
+.portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border: 2px solid #111827;
+  background: transparent;
+  color: #111827;
+  font-weight: 500;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.portfolio-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.portfolio-button:hover .icon {
+  transform: translateX(0.25rem);
+}
+
+.portfolio-button .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hero image container */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  position: relative;
+  perspective: 1000px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.floating-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  filter: blur(40px);
+  z-index: -1;
+}
+@media(max-width:500px){
+    .hero-content {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+
+
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .header {
+    padding: 1rem 3rem;
+  }
+
+  .hero {
+    padding: 5rem 3rem;
+  }
+
+  .name {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: flex;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-content {
+    margin-bottom: 0;
+  }
+
+  .hero-image-container {
+    justify-content: center;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .name {
+    font-size: 4rem;
+  }
+}
+
+/* Additional utility classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Smooth transitions for better performance */
+.image-wrapper,
+.portfolio-button,
+.nav-link,
+.social-link {
+  will-change: transform;
+}
+
+
+/* Black and white profile image by default */
+.profile-image {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+/* On hover of the image wrapper, show colored image */
+.image-wrapper:hover .profile-image {
+  filter: grayscale(0%);
+}

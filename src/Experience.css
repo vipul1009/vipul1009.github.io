@@ -1,0 +1,372 @@
+/* Experience Section Styles */
+.experience-section {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.title-underline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.underline-left,
+.underline-right {
+  width: 3rem;
+  height: 2px;
+  background-color: #e2e8f0;
+}
+
+.underline-center {
+  width: 2rem;
+  height: 3px;
+  background-color: #2d3748;
+  border-radius: 2px;
+}
+
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #e2e8f0 0%, #2d3748 50%, #e2e8f0 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Experience Items */
+.experience-item {
+  position: relative;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.experience-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-item.left {
+  padding-right: 50%;
+  padding-left: 0;
+}
+
+.experience-item.right {
+  padding-left: 50%;
+  padding-right: 0;
+  text-align: right;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 3px solid #2d3748;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.timeline-dot:hover,
+.timeline-dot.hovered {
+  width: 24px;
+  height: 24px;
+  border-color: #1a202c;
+  box-shadow: 0 0 20px rgba(45, 55, 72, 0.3);
+}
+
+.dot-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #2d3748;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.timeline-dot.hovered .dot-inner {
+  width: 10px;
+  height: 10px;
+  background-color: #1a202c;
+}
+
+/* Experience Content */
+.experience-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-right: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.experience-item.right .experience-content {
+  margin-right: 0;
+  margin-left: 2rem;
+}
+
+.experience-content:hover,
+.experience-content.hovered {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+}
+
+/* Content Overlay Effect */
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(45, 55, 72, 0.05) 50%, transparent 100%);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.content-overlay.active {
+  left: 100%;
+}
+
+/* Experience Header */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  flex: 1;
+}
+
+.duration-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 50px;
+  padding: 0.75rem 1rem;
+  min-width: 80px;
+  transition: all 0.3s ease;
+}
+
+.experience-content.hovered .duration-badge {
+  background-color: #2d3748;
+  border-color: #2d3748;
+  color: #ffffff;
+}
+
+.duration {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.experience-content.hovered .duration {
+  color: #e2e8f0;
+}
+
+.year {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.experience-content.hovered .year {
+  color: #ffffff;
+}
+
+/* Job Description */
+.job-description {
+  color: #718096;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Timeline Connectors */
+.timeline-connector {
+  position: absolute;
+  top: 1.75rem;
+  width: 2rem;
+  height: 2px;
+  background-color: #e2e8f0;
+  z-index: 2;
+}
+
+.left-connector {
+  right: 0;
+}
+
+.right-connector {
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 2rem;
+  }
+
+  .experience-item.left,
+  .experience-item.right {
+    padding-left: 4rem;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 2rem;
+  }
+
+  .experience-content {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .timeline-connector {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .duration-badge {
+    align-self: flex-end;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .underline-left,
+  .underline-right {
+    width: 4rem;
+  }
+
+  .underline-center {
+    width: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(45, 55, 72, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(45, 55, 72, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(45, 55, 72, 0);
+  }
+}
+
+.timeline-dot:hover {
+  animation: pulse 1.5s infinite;
+}
+
+/* Scroll reveal animations */
+.experience-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.experience-item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.experience-item:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.experience-item:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+/* Focus states for accessibility */
+.experience-content:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 55, 72, 0.3);
+}
+
+/* Print styles */
+@media print {
+  .experience-section {
+    background-color: transparent;
+  }
+
+  .timeline-line {
+    background-color: #000;
+  }
+}
