@@ -166,7 +166,7 @@ const MyPortfolio = () => {
     {
       id: 9,
       title: "Matrix Calculator & WiFi Logger ",
-      link: "https://github.com/vipul1009/FlightTrackerApp2",
+      link: "https://github.com/vipul1009/MatrixSensingApp2",
       category: "APP-DEV",
       image: "/matrix-icon-design-vector.jpg",
       description: "--", 
